@@ -1,0 +1,10 @@
+<ul>
+  <% events.forEach((event) => { %>
+    <li>
+      <%= event.name %> - $<%= event.description %>
+    </li>
+    <li>
+      <%= event.imageUrl %>
+    </li>
+  <%  }) %>
+</ul>

@@ -15,7 +15,7 @@ const passport = require("passport");
 
 const index = require('./routes/index');
 const authRoutes = require("./routes/auth-routes");
-
+const eventRoutes = require('./routes/events');
 
 
 
@@ -59,7 +59,7 @@ app.use(passport.session());
 
 app.use('/', authRoutes);
 app.use('/', index);
-
+app.use('/events', eventRoutes);
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   const err = new Error('Not Found');
