@@ -11,7 +11,7 @@ router.get('/events', ensureLogin.ensureLoggedIn(), (req, res, next) => {
       return next(err);
     }
 
-    res.render('events/index', {
+    res.render('events/events', {
       user: req.user,
       events: events
     });
