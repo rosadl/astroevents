@@ -59,7 +59,7 @@ app.use(passport.session());
 
 app.use('/', authRoutes);
 app.use('/', index);
-app.use('/events', eventRoutes);
+app.use('/', eventRoutes);
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   const err = new Error('Not Found');

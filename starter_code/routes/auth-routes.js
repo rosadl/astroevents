@@ -1,7 +1,7 @@
 const express = require("express");
 const authRoutes = express.Router();
 const passport = require("passport");
-const ensureLogin = require("connect-ensure-login");
+
 
 
 const User = require("../models/User");
@@ -59,15 +59,11 @@ authRoutes.get("/login", (req, res, next) => {
 });
 
 authRoutes.post("/login", passport.authenticate("local", {
-  successRedirect: "/event-page",
+  successRedirect: "/events",
   failureRedirect: "/login",
   failureFlash: true,
   passReqToCallback: true
 }));
-
-authRoutes.get("/event-page", ensureLogin.ensureLoggedIn(), (req, res) => {
-  res.render("events", { user: req.user });
-});
 
 authRoutes.get("/logout", (req, res) => {
   req.logout();

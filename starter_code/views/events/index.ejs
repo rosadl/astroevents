@@ -1,10 +1,18 @@
+<% if (user) { %>
+  <div>
+    <h2>Wellcome <%= user.username %> </h2>
+      <a href="/logout">logout</a>
+  </div>
+<% } %>
+
+
 <ul>
   <% events.forEach((event) => { %>
     <li>
-      <%= event.name %> - $<%= event.description %>
+      <%= event.name %> - <%= event.description %>
     </li>
-    <li>
-      <%= event.imageUrl %>
-    </li>
+
+    <img src="<%= event.imageUrl %>" alt="">
+      </img>
   <%  }) %>
 </ul>
