@@ -18,7 +18,6 @@ const authRoutes = require("./routes/auth-routes");
 const eventRoutes = require('./routes/events');
 
 
-
 mongoose.connect('mongodb://localhost/Astroevent');
 
 const app = express();
